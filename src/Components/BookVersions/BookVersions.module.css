@@ -1,0 +1,28 @@
+.book-versions > li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+}
+
+.book-versions .book-price,
+.book-versions .book-name {
+  flex-basis: 50%;
+}
+
+.book-versions .book-price {
+  text-align: right;
+}
+
+.book-versions .book-name {
+  text-align: left;
+}
+
+.book-versions button {
+  margin-top: 0.5rem;
+}
+
+.book-versions .book-overdue {
+  color: red;
+}

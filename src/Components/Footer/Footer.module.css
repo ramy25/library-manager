@@ -1,0 +1,23 @@
+footer {
+  background: #000;
+  color: #fff;
+  padding: 15px;
+}
+
+.footer-madeby a {
+  color: #fff;
+  text-decoration: none;
+  animation: color-change 4s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: red;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: red;
+  }
+}

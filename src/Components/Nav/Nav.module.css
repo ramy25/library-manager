@@ -1,0 +1,36 @@
+.main-nav {
+  display: flex;
+  gap: 15px;
+}
+
+.main-nav li {
+  list-style: none;
+  margin: 0;
+}
+
+.main-nav li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  transition: color ease 0.3s;
+  position: relative;
+}
+
+.main-nav li a::before {
+  content: ' ';
+  position: absolute;
+  background: red;
+  height: 3px;
+  bottom: -5px;
+  width: 0;
+  transition: 0.3s;
+}
+
+.main-nav li a:hover::before {
+  color: red;
+  width: 100%;
+}
+
+.main-nav li.active a::before {
+  width: 100%;
+}

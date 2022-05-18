@@ -1,0 +1,7 @@
+.books-card > ul > li {
+  border-bottom: 2px dotted #000;
+}
+
+.books-card > ul > li:last-child {
+  border-bottom: none;
+}
