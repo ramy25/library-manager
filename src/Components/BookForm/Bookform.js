@@ -95,7 +95,7 @@ const BookForm = (props) => {
           value={bookIsbn}
           placeholder="123-123-123-123-1..."
         />
-        <label htmlFor="price">Price</label>
+        <label htmlFor="price">Price &euro;</label>
         <input
           id="price"
           type="number"

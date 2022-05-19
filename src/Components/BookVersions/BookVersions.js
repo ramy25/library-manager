@@ -11,7 +11,9 @@ const BookVersions = (props) => {
             className={book.overdue ? styles['book-overdue'] : ''}
           >
             <p className={styles['book-name']}>Book Name: {book.name}</p>
-            <p className={styles['book-price']}>Book Price: {book.price}</p>
+            <p className={styles['book-price']}>
+              Book Price: {book.price}&euro;
+            </p>
 
             {!book.borrowed ? (
               <Button onClick={() => props.borrowBook(book.id)}>Borrow</Button>

@@ -1,6 +1,6 @@
 .main-nav {
   display: flex;
-  gap: 15px;
+  gap: 0.5rem;
 }
 
 .main-nav li {
