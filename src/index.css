@@ -36,19 +36,21 @@ ul {
   list-style: none;
 }
 
-body {
-  animation: fadeInAnimation ease 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  position: absolute;
-  right: 0;
-}
-
-@keyframes fadeInAnimation {
-  0% {
-    left: -200%;
+@media (min-width: 768px) {
+  body {
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    position: absolute;
+    right: 0;
   }
-  100% {
-    left: 0;
+
+  @keyframes fadeInAnimation {
+    0% {
+      left: -200%;
+    }
+    100% {
+      left: 0;
+    }
   }
 }
