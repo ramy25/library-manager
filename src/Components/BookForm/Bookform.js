@@ -56,7 +56,7 @@ const BookForm = (props) => {
       return;
     }
 
-    if (bookPrice === '' || +bookPrice === 0) {
+    if (bookPrice === '' || +bookPrice <= 0) {
       setError({
         title: 'Invalid price!',
         message: 'Please add a price higher than 0!',
