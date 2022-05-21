@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/library-manager/static/css/main.1dbfbf3a.css",
+    "main.js": "/library-manager/static/js/main.b1ec03ba.js",
+    "index.html": "/library-manager/index.html",
+    "main.1dbfbf3a.css.map": "/library-manager/static/css/main.1dbfbf3a.css.map",
+    "main.b1ec03ba.js.map": "/library-manager/static/js/main.b1ec03ba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1dbfbf3a.css",
+    "static/js/main.b1ec03ba.js"
+  ]
+}
