@@ -9,7 +9,7 @@ const BooksLibrary = (props) => {
     (book) => book.borrowed === !isLibrary
   );
 
-  const booksGroupedBySSN = availableBooks.reduce(
+  const booksGroupsByIsbn = availableBooks.reduce(
     (groups, book) => ({
       ...groups,
       [book.isbn]: [...(groups[book.isbn] || []), book],
@@ -17,7 +17,7 @@ const BooksLibrary = (props) => {
     {}
   );
 
-  const isLibraryEmpty = Object.keys(booksGroupedBySSN).length === 0;
+  const isLibraryEmpty = Object.keys(booksGroupsByIsbn).length === 0;
 
   const emptyMessage =
     isLibraryEmpty && isLibrary ? (
@@ -37,15 +37,15 @@ const BooksLibrary = (props) => {
       {emptyMessage}
       {!isLibraryEmpty && (
         <ul>
-          {Object.keys(booksGroupedBySSN).map((books, index) => {
+          {Object.keys(booksGroupsByIsbn).map((books, index) => {
             return (
               <li key={index}>
                 <h3>
-                  There are #{booksGroupedBySSN[books].length} books with ISBN{' '}
+                  There are #{booksGroupsByIsbn[books].length} books with ISBN{' '}
                   {books}
                 </h3>
                 <BookVersions
-                  books={booksGroupedBySSN[books]}
+                  books={booksGroupsByIsbn[books]}
                   borrowBook={props.borrowBook}
                   returnBook={props.returnBook}
                 />
