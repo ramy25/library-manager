@@ -6,13 +6,13 @@ export const dateToIsoFormat = (date) => {
 };
 
 const treatAsUTC = (date) => {
-  var result = new Date(date);
+  const result = new Date(date);
   result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
   return result;
 };
 
 export const daysBetween = (startDate, endDate) => {
-  var millisecondsPerDay = 24 * 60 * 60 * 1000;
+  const millisecondsPerDay = 24 * 60 * 60 * 1000;
   return parseInt(
     (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay
   );
