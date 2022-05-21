@@ -15,14 +15,14 @@ const Nav = (props) => {
   return (
     <ul className={styles['main-nav']}>
       <li className={navActive === 'library' ? styles['active'] : ''}>
-        <a href="#library" id="library" onClick={navHandler}>
+        <button onClick={navHandler} id="library" type="button">
           Library
-        </a>
+        </button>
       </li>
       <li className={navActive === 'borrowed' ? styles['active'] : ''}>
-        <a href="#borrowed" id="borrowed" onClick={navHandler}>
+        <button onClick={navHandler} id="borrowed" type="button">
           Borrowed Books
-        </a>
+        </button>
       </li>
     </ul>
   );

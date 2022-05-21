@@ -1,6 +1,6 @@
 .main-nav {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .main-nav li {
@@ -8,15 +8,20 @@
   margin: 0;
 }
 
-.main-nav li a {
+.main-nav li button {
   text-decoration: none;
   color: #000;
   font-weight: bold;
   transition: color ease 0.3s;
   position: relative;
+  border: none;
+  background: none;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0;
 }
 
-.main-nav li a::before {
+.main-nav li button::before {
   content: ' ';
   position: absolute;
   background: red;
@@ -26,11 +31,11 @@
   transition: 0.3s;
 }
 
-.main-nav li a:hover::before {
+.main-nav li button:hover::before {
   color: red;
   width: 100%;
 }
 
-.main-nav li.active a::before {
+.main-nav li.active button::before {
   width: 100%;
 }
