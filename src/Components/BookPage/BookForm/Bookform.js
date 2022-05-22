@@ -1,11 +1,10 @@
 import { useState } from 'react';
-
 import Card from '../../Card/Card';
 import Button from '../../Button/Button';
 
-import styles from './Bookform.module.css';
+import { validateIsb } from '../../../helperFunctions';
 
-const isbnPattern = /^(?=(?:\D*\d){13}(?:(?:\D*\d){3})?$)[\d-]+$/;
+import styles from './Bookform.module.css';
 
 const BookForm = ({ setError, addBookHandler }) => {
   const [bookName, setBookName] = useState('');
@@ -41,7 +40,7 @@ const BookForm = ({ setError, addBookHandler }) => {
       return;
     }
 
-    if (!isbnPattern.test(bookIsbn)) {
+    if (!validateIsb(bookIsbn)) {
       setError({
         title: 'Invalid ISBN!',
         message:
