@@ -2,7 +2,7 @@ import Card from '../../Card/Card';
 import BookVersions from '../BookVersions/BookVersions';
 import styles from './Books.module.css';
 
-const BooksLibrary = (props) => {
+const Books = (props) => {
   const isLibrary = props.showContent === 'library' ? true : false;
 
   const availableBooks = props.books.filter(
@@ -58,4 +58,4 @@ const BooksLibrary = (props) => {
   );
 };
 
-export default BooksLibrary;
+export default Books;
