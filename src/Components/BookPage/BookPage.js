@@ -89,7 +89,7 @@ const BookPage = () => {
         />
       )}
       <Nav switchContentHandler={switchContentHandler} />
-      <BookForm addBookHandler={addBookHandler} />
+      <BookForm setError={setError} addBookHandler={addBookHandler} />
       <Books
         books={books}
         showContent={showContent}

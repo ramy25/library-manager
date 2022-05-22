@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import Card from '../../Card/Card';
 import Button from '../../Button/Button';
-import ErrorModal from '../../ErrorModal/ErrorModal';
 
 import styles from './Bookform.module.css';
 
@@ -12,11 +11,6 @@ const BookForm = (props) => {
   const [bookName, setBookName] = useState('');
   const [bookIsbn, setBookIsbn] = useState('');
   const [bookPrice, setBookPrice] = useState('');
-  const [error, setError] = useState();
-
-  const errorHandler = () => {
-    setError();
-  };
 
   const bookNameChangeHandler = (e) => {
     setBookName(e.target.value);
@@ -40,7 +34,7 @@ const BookForm = (props) => {
     e.preventDefault();
 
     if (bookName === '') {
-      setError({
+      props.setError({
         title: 'Name field is empty!',
         message: 'Please enter a name!',
       });
@@ -48,7 +42,7 @@ const BookForm = (props) => {
     }
 
     if (!isbnPattern.test(bookIsbn)) {
-      setError({
+      props.setError({
         title: 'Invalid ISBN!',
         message:
           'A valid ISBN is made of 13 digits, divided in 5 sets of numbers, separated by "-"',
@@ -57,27 +51,20 @@ const BookForm = (props) => {
     }
 
     if (bookPrice === '' || +bookPrice <= 0) {
-      setError({
+      props.setError({
         title: 'Invalid price!',
         message: 'Please add a price higher than 0!',
       });
       return;
     }
 
-    if (bookIsbn) props.addBookHandler(bookName, bookPrice, bookIsbn);
+    props.addBookHandler(bookName, bookPrice, bookIsbn);
 
     clearInputs();
   };
 
   return (
     <Card>
-      {error && (
-        <ErrorModal
-          title={error.title}
-          message={error.message}
-          onConfirm={errorHandler}
-        />
-      )}
       <form onSubmit={formSubmitHandler} className={styles['book-form']}>
         <label htmlFor="name">Name</label>
         <input
