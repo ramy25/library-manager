@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import styles from './BookPageNav.module.css';
 
-const BookPageNav = (props) => {
+const BookPageNav = ({ switchContentHandler }) => {
   const [navActive, setNavActive] = useState('library');
 
   useEffect(() => {
-    props.switchContentHandler(navActive);
+    switchContentHandler(navActive);
   }, [navActive]);
 
   const navHandler = (e) => {

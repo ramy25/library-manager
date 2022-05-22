@@ -1,10 +1,10 @@
 import Button from '../../Button/Button';
 import styles from './BookVersions.module.css';
 
-const BookVersions = (props) => {
+const BookVersions = ({ books, borrowBook, returnBook }) => {
   return (
     <ul className={styles['book-versions']}>
-      {props.books.map((book) => {
+      {books.map((book) => {
         return (
           <li
             key={book.id}
@@ -16,9 +16,9 @@ const BookVersions = (props) => {
             </p>
 
             {!book.borrowed ? (
-              <Button onClick={() => props.borrowBook(book.id)}>Borrow</Button>
+              <Button onClick={() => borrowBook(book.id)}>Borrow</Button>
             ) : (
-              <Button onClick={() => props.returnBook(book.id)}>Return</Button>
+              <Button onClick={() => returnBook(book.id)}>Return</Button>
             )}
           </li>
         );

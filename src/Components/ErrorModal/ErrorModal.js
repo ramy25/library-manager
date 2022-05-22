@@ -5,39 +5,35 @@ import Card from '../Card/Card';
 import Button from '../Button/Button';
 import classes from './ErrorModal.module.css';
 
-const Backdrop = (props) => {
-  return <div className={classes.backdrop} onClick={props.onConfirm} />;
+const Backdrop = ({ onConfirm }) => {
+  return <div className={classes.backdrop} onClick={onConfirm} />;
 };
 
-const ModalOverlay = (props) => {
+const ModalOverlay = ({ onConfirm, title, message }) => {
   return (
     <Card className={classes.modal}>
       <header className={classes.header}>
-        <h2>{props.title}</h2>
+        <h2>{title}</h2>
       </header>
       <div className={classes.content}>
-        <h3>{props.message}</h3>
+        <h3>{message}</h3>
       </div>
       <div className={classes.actions}>
-        <Button onClick={props.onConfirm}>Okay</Button>
+        <Button onClick={onConfirm}>Okay</Button>
       </div>
     </Card>
   );
 };
 
-const ErrorModal = (props) => {
+const ErrorModal = ({ onConfirm, title, message }) => {
   return (
     <>
       {ReactDOM.createPortal(
-        <Backdrop onConfirm={props.onConfirm} />,
+        <Backdrop onConfirm={onConfirm} />,
         document.getElementById('backdrop-root')
       )}
       {ReactDOM.createPortal(
-        <ModalOverlay
-          title={props.title}
-          message={props.message}
-          onConfirm={props.onConfirm}
-        />,
+        <ModalOverlay title={title} message={message} onConfirm={onConfirm} />,
         document.getElementById('overlay-root')
       )}
     </>

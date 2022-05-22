@@ -7,7 +7,7 @@ import styles from './Bookform.module.css';
 
 const isbnPattern = /^(?=(?:\D*\d){13}(?:(?:\D*\d){3})?$)[\d-]+$/;
 
-const BookForm = (props) => {
+const BookForm = ({ setError, addBookHandler }) => {
   const [bookName, setBookName] = useState('');
   const [bookIsbn, setBookIsbn] = useState('');
   const [bookPrice, setBookPrice] = useState('');
@@ -34,7 +34,7 @@ const BookForm = (props) => {
     e.preventDefault();
 
     if (bookName === '') {
-      props.setError({
+      setError({
         title: 'Name field is empty!',
         message: 'Please enter a name!',
       });
@@ -42,7 +42,7 @@ const BookForm = (props) => {
     }
 
     if (!isbnPattern.test(bookIsbn)) {
-      props.setError({
+      setError({
         title: 'Invalid ISBN!',
         message:
           'A valid ISBN is made of 13 digits, divided in 5 sets of numbers, separated by "-"',
@@ -51,14 +51,14 @@ const BookForm = (props) => {
     }
 
     if (bookPrice === '' || +bookPrice <= 0) {
-      props.setError({
+      setError({
         title: 'Invalid price!',
         message: 'Please add a price higher than 0!',
       });
       return;
     }
 
-    props.addBookHandler(bookName, bookPrice, bookIsbn);
+    addBookHandler(bookName, bookPrice, bookIsbn);
 
     clearInputs();
   };

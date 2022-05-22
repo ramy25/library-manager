@@ -2,12 +2,10 @@ import Card from '../../Card/Card';
 import BookVersions from '../BookVersions/BookVersions';
 import styles from './Books.module.css';
 
-const Books = (props) => {
-  const isLibrary = props.showContent === 'library' ? true : false;
+const Books = ({ showContent, books, borrowBook, returnBook }) => {
+  const isLibrary = showContent === 'library' ? true : false;
 
-  const availableBooks = props.books.filter(
-    (book) => book.borrowed === !isLibrary
-  );
+  const availableBooks = books.filter((book) => book.borrowed === !isLibrary);
 
   const booksGroupsByIsbn = availableBooks.reduce(
     (groups, book) => ({
@@ -46,8 +44,8 @@ const Books = (props) => {
                 </h3>
                 <BookVersions
                   books={booksGroupsByIsbn[books]}
-                  borrowBook={props.borrowBook}
-                  returnBook={props.returnBook}
+                  borrowBook={borrowBook}
+                  returnBook={returnBook}
                 />
               </li>
             );
