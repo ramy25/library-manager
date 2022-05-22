@@ -8,11 +8,13 @@ export const dateToIsoFormat = (date) => {
 const treatAsUTC = (date) => {
   const result = new Date(date);
   result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
+
   return result;
 };
 
 export const daysBetween = (startDate, endDate) => {
   const millisecondsPerDay = 24 * 60 * 60 * 1000;
+
   return parseInt(
     (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay
   );

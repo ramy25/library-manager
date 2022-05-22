@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import Card from '../Card/Card';
-import Button from '../Button/Button';
-import ErrorModal from '../ErrorModal/ErrorModal';
+import Card from '../../Card/Card';
+import Button from '../../Button/Button';
+import ErrorModal from '../../ErrorModal/ErrorModal';
 
 import styles from './Bookform.module.css';
 

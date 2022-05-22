@@ -1,4 +1,4 @@
-import Card from '../Card/Card';
+import Card from '../../Card/Card';
 import BookVersions from '../BookVersions/BookVersions';
 import styles from './Books.module.css';
 
