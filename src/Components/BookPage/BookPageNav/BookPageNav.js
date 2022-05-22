@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import styles from './Nav.module.css';
+import styles from './BookPageNav.module.css';
 
-const Nav = (props) => {
+const BookPageNav = (props) => {
   const [navActive, setNavActive] = useState('library');
 
   useEffect(() => {
@@ -28,4 +28,4 @@ const Nav = (props) => {
   );
 };
 
-export default Nav;
+export default BookPageNav;

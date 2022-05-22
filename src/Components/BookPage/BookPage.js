@@ -4,7 +4,7 @@ import { dateToIsoFormat, daysBetween } from '../../helperFunctions';
 
 import BookForm from './BookForm/Bookform';
 import Books from './Books/Books';
-import Nav from './Nav/Nav';
+import BookPageNav from './BookPageNav/BookPageNav';
 
 import ErrorModal from '../../Components/ErrorModal/ErrorModal';
 
@@ -88,7 +88,7 @@ const BookPage = () => {
           onConfirm={errorHandler}
         />
       )}
-      <Nav switchContentHandler={switchContentHandler} />
+      <BookPageNav switchContentHandler={switchContentHandler} />
       <BookForm setError={setError} addBookHandler={addBookHandler} />
       <Books
         books={books}
